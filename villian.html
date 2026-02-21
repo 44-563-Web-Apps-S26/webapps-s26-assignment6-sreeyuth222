@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Villain Guess Checker</title>
+</head>
+<body>
+  <h1>Villains by Sreeyuth</h1>
+
+  <!-- Part 3: Guess form -->
+  <div>
+    <label for="secretVillain">Funny Man</label>
+    <input id="secretVillain" type="password" value="Joker" />
+  </div>
+
+  <br>
+
+  <div>
+    <label for="guessVillain">Guess the villain</label>
+    <input id="guessVillain" type="text" />
+  </div>
+
+  <br>
+
+  <div>
+    <button type="button" onclick="checkVillain()">Check the guess</button>
+  </div>
+
+  <p id="villainResult">Caught: 0 | Got Away: 0</p>
+
+  <script>
+    let caught = 0;
+    let gotAway = 0;
+
+    function checkVillain() {
+      const secret = document.getElementById("secretVillain").value;
+      const guess = document.getElementById("guessVillain").value;
+
+      if (secret === guess) {
+        caught = caught + 1;
+        alert("You caught them");
+      } else {
+        gotAway = gotAway + 1;
+        alert("Maybe next time");
+      }
+
+      document.getElementById("villainResult").innerHTML =
+        "Caught: " + caught + " | Got Away: " + gotAway;
+    }
+  </script>
+</body>
+</html>

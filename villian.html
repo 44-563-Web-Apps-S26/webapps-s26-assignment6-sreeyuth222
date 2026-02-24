@@ -6,9 +6,10 @@
   <title>Villain Guess Checker</title>
 </head>
 <body>
+
   <h1>Villains by Sreeyuth</h1>
 
-  <!-- Part 3: Guess form -->
+  <!-- Guess Section -->
   <div>
     <label for="secretVillain">Funny Man</label>
     <input id="secretVillain" type="password" value="Joker" />
@@ -29,6 +30,15 @@
 
   <p id="villainResult">Caught: 0 | Got Away: 0</p>
 
+  <hr>
+
+  <!-- Image Section -->
+  <h3>Click the Image</h3>
+
+  <div>
+    <img id="treePic" src="assets/ginkgo.jpg" width="150" height="150" onclick="updatePic()">
+  </div>
+
   <script>
     let caught = 0;
     let gotAway = 0;
@@ -38,16 +48,40 @@
       const guess = document.getElementById("guessVillain").value;
 
       if (secret === guess) {
-        caught = caught + 1;
+        caught++;
         alert("You caught them");
       } else {
-        gotAway = gotAway + 1;
+        gotAway++;
         alert("Maybe next time");
       }
 
       document.getElementById("villainResult").innerHTML =
         "Caught: " + caught + " | Got Away: " + gotAway;
     }
+
+    let usePic = 1;
+
+    function updatePic() {
+      let img = document.getElementById("treePic");
+
+      switch (usePic) {
+        case 1:
+          img.src = "assets/maple.jpg";
+          usePic = 2;
+          break;
+
+        case 2:
+          img.src = "assets/neem.jpg";
+          usePic = 3;
+          break;
+
+        case 3:
+          img.src = "assets/ginkgo.jpg";
+          usePic = 1;
+          break;
+      }
+    }
   </script>
+
 </body>
 </html>

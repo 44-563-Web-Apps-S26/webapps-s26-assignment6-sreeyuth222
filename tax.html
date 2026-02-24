@@ -47,7 +47,45 @@ function doTax() {
 
     document.getElementById("taxResult").innerHTML = "Taxes are: " + taxTable;
 }
+
+function chooseOp() {
+    let income = Number(document.getElementById("income").value);
+    let baseRate = Number(document.getElementById("baseRate").value);
+
+    let radios = document.getElementsByName("operation");
+    let result;
+
+    for(let r of radios) {
+        if(r.checked) {
+            if(r.value === "exponent") {
+                result = income ** baseRate;
+            }
+            else if(r.value === "add") {
+                result = income + baseRate;
+            }
+            else if(r.value === "mod") {
+                result = income % baseRate;
+            }
+        }
+    }
+
+    document.getElementById("opResult").innerHTML =
+        income + " and " + baseRate + " gives " + result;
+}
+
 </script>
+
+<hr>
+
+<h3>Choose Operation</h3>
+
+<form>
+    <input type="radio" name="operation" value="exponent" onclick="chooseOp()"> power<br>
+    <input type="radio" name="operation" value="add" onclick="chooseOp()"> sum<br>
+    <input type="radio" name="operation" value="mod" onclick="chooseOp()"> mod<br>
+</form>
+
+<p id="opResult"></p>
 
 </body>
 </html>

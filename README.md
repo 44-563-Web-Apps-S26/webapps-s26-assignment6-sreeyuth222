@@ -5,7 +5,7 @@ Introduction to Java Script and DOM
 ## Hosted Applications
 
 Villain App:
-https://44-563-web-apps-s26.github.io/webapps-s26-assignment6-sreeyuth222/villain.html
+https://44-563-web-apps-s26.github.io/webapps-s26-assignment6-sreeyuth222/villian.html
 
 Tax Calculator:
 https://44-563-web-apps-s26.github.io/webapps-s26-assignment6-sreeyuth222/tax.html
